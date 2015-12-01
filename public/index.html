@@ -2,15 +2,39 @@
 <html data-ng-app="myApp">
 	<head>
 		<title>Index Page</title>
-	
+		<base href='/'>
 	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
 	</head>
 	<body>
+		
+		<div data-ng-include="'app/layout/shell.html'"></div>
+		
+		<div ui-view></div>
 		
 		<script src="/bower_components/jquery/dist/jquery.js"></script>
 		<script src="/bower_components/angular/angular.js"></script>
 		<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		
+		
+		<script src="app/core/core.module.js"></script>
+		<script src="app/layout/layout.module.js"></script>
+		<script src="app/core/config.js"></script>
+		<script src="app/core/routes.js"></script>
+		<script src="app/core/dataservice.js"></script>
+		<script src="app/layout/shell.controller.js"></script>
+		<script src="app/layout/ht-top-nav.directive.js"></script>
+		<script src="app/home/home.module.js"></script>
+		<script src="app/home/home.controller.js"></script>
+		<script src="app/viewitem/viewitem.module.js"></script>
+		<script src="app/viewitem/viewitem.controller.js"></script>
+		<script src="app/signup/signup.module.js"></script>
+		<script src="app/signup/signup.controller.js"></script>
+		<script src="app/admin/admin.module.js"></script>
+		<script src="app/admin/admin.controller.js"></script>
+		<script src="app/additem/additem.module.js"></script>
+		<script src="app/additem/additem.controller.js"></script>
+		<script src="app/edititem/edititem.module.js"></script>
+		<script src="app/edititem/edititem.controller.js"></script>
 		<script src="app/app.module.js"></script>
 	</body>
 	

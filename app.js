@@ -20,6 +20,11 @@ app.use('/api', api);
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, './')));
 
+//Deep linking
+app.all('/*', function(req, res, next) {
+	res.sendFile('index.html',{root: __dirname + '/public'});
+});
+
 var server = app.listen(3000, function() {
 	var host = server.address().address;
 	var port = server.address().port;

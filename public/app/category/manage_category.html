@@ -1,0 +1,57 @@
+<div class="container" data-ng-controller="manageCategoryCtrl as vm">
+        <div data-ng-show="vm.message.show">
+          <uib-alert type="{{vm.message.type}}">{{vm.message.content}}</uib-alert>
+        </div>
+        <h3>Manage Categories</h3>
+        <div data-ng-show="vm.showUpdateField">
+                <h4>Update Category</h4>
+                <div class="input-group">
+                <input data-ng-model="vm.updatedCategoryName" type="text" class="form-control" placeholder="Category Name...">
+                <span class="input-group-btn">
+                        <button data-ng-click="vm.updateCategory(vm.updatedCategoryId, vm.updatedCategoryName);" class="btn btn-default" type="button">Save</button>
+                </span>
+                </div>
+        </div>
+        
+        <div>
+                <h4>Add Category</h4>
+                <div class="input-group">
+                <input data-ng-model="vm.newCategoryName" type="text" class="form-control" placeholder="Create Category...">
+                <span class="input-group-btn">
+                        <button data-ng-click="vm.createCategory(vm.newCategoryName);" class="btn btn-default" type="button">Create</button>
+                </span>
+                </div>
+        </div>
+                
+        <div>
+                <h4>Filter</h4>
+                <input data-ng-model="searchText" type="text" class="form-control" placeholder="Search...">    
+        </div>
+       
+        <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <td class="col-md-5" data-ng-click="vm.doSort();">Category Id</td>
+                      <td class="col-md-5" data-ng-click="vm.doSort();">Category</td>
+                      <td class="col-md-1">&nbsp;</td>
+                      <td class="col-md-1">&nbsp;</td>
+                     </tr>
+                </thead>
+                <tbody>
+                     <tr data-ng-repeat="category in vm.categories | filter:searchText | orderBy:'title':vm.reverse">
+                       <td>{{category._id}}</td>
+                       <td>{{category.title}}</td>
+                       <td>
+                         <button data-ng-click="vm.editCategory(category);" class="btn btn-warning pull-right">
+                         <span class="glyphicon glyphicon-pencil"></span>
+                         </button>
+                       </td>
+                       <td>
+                         <button data-ng-click="vm.removeCategory(category._id);" class="btn btn-danger pull-right">
+                         <span class="glyphicon glyphicon-remove"></span>
+                         </button>
+                       </td>
+                     </tr>
+                </tbody>
+        </table>
+</div>

@@ -1,0 +1,15 @@
+<div data-ng-controller='viewItemCtrl as vm'>
+	<a href="/">Go Back</a>
+	<h1>{{item.title}}</h1>
+	<small>Posted on: <span ng-bind="item.date | date:'MM/dd/yyyy' "></span></small>
+	<hr>
+	<div>
+		{{item.description}}
+	</div>
+
+	<div class="actions">
+		<a href="/item/edit/{{item._id}}" class="btn btn-default">Edit</a>
+		<a href="/" class="btn btn-danger" ng-click="removeItem()">Delete</a>		
+		</div>
+	<br><br>
+</div>

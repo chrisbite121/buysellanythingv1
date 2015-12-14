@@ -8,17 +8,24 @@ var db = mongoose.connection;
 
 var app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function(callback) {
 	console.log('connected successfully to database');
 });
 
-var api = require('./routes/api.js');
+var items = require('./routes/items.js');
+var categories = require('./routes/categories.js')
 
-app.use('/api', api);
+app.use('/item', items);
+app.use('/categories', categories);
 
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, './')));
+
+
 
 //Deep linking
 app.all('/*', function(req, res, next) {

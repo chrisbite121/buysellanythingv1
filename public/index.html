@@ -4,6 +4,7 @@
 		<title>Index Page</title>
 		<base href='/'>
 	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="/public/css/style.css" />
 	</head>
 	<body>
 		
@@ -14,27 +15,42 @@
 		<script src="/bower_components/jquery/dist/jquery.js"></script>
 		<script src="/bower_components/angular/angular.js"></script>
 		<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-		
+		<script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+		<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 		
 		<script src="app/core/core.module.js"></script>
 		<script src="app/layout/layout.module.js"></script>
 		<script src="app/core/config.js"></script>
 		<script src="app/core/routes.js"></script>
-		<script src="app/core/dataservice.js"></script>
+		<script src="app/core/item.service.js"></script>
+		<script src="app/core/category.service.js"></script>
+		<script src="app/core/menu.service.js"></script>
+		<script src="app/core/message.service.js"></script>
+		<script src="app/core/geo.service.js"></script>
 		<script src="app/layout/shell.controller.js"></script>
-		<script src="app/layout/ht-top-nav.directive.js"></script>
+		<script src="app/layout/top-nav.directive.js"></script>
+		<script src="app/layout/submenu.directive.js"></script>
 		<script src="app/home/home.module.js"></script>
 		<script src="app/home/home.controller.js"></script>
-		<script src="app/viewitem/viewitem.module.js"></script>
-		<script src="app/viewitem/viewitem.controller.js"></script>
 		<script src="app/signup/signup.module.js"></script>
 		<script src="app/signup/signup.controller.js"></script>
 		<script src="app/admin/admin.module.js"></script>
 		<script src="app/admin/admin.controller.js"></script>
-		<script src="app/additem/additem.module.js"></script>
-		<script src="app/additem/additem.controller.js"></script>
-		<script src="app/edititem/edititem.module.js"></script>
-		<script src="app/edititem/edititem.controller.js"></script>
+		<script src="app/admin/item/manage_item.module.js"></script>
+		<script src="app/admin/item/manage_item.controller.js"></script>
+		<script src="app/admin/item/view_item.controller.js"></script>
+		<script src="app/admin/item/add_item.controller.js"></script>
+		<script src="app/admin/item/edit_item.controller.js"></script>
+		<script src="app/item/additem.module.js"></script>
+		<script src="app/item/additem.controller.js"></script>
+		<script src="app/item/edititem.module.js"></script>
+		<script src="app/item/edititem.controller.js"></script>
+		<script src="app/item/viewitem.module.js"></script>
+		<script src="app/item/viewitem.controller.js"></script>		
+		<script src="app/category/manage_category.module.js"></script>
+		<script src="app/category/manage_category.controller.js"></script>
+		<script src="app/user/user.module.js"></script>
+		<script src="app/user/user.controller.js"></script>
 		<script src="app/app.module.js"></script>
 	</body>
 	

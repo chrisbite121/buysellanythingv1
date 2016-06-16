@@ -4,9 +4,9 @@
 	angular.module('app.core')
 		.factory('geoService', geoService);
 		
-	geoService.$inject = [];
+	geoService.$inject = ['$q'];
 	
-	function geoService() {
+	function geoService($q) {
 		var service = {
 			getDistricts: getDistricts,
 			getProvinces: getProvinces
@@ -15,11 +15,19 @@
 		return service;
     
 		function getDistricts(){
-			return districts;
+			var q1 = $q.defer();
+            
+            q1.resolve(districts);
+            
+            return q1.promise;
 		}
 		
 		function getProvinces(){
-			return provinces;
+			var q2 = $q.defer();
+            
+            q2.resolve(provinces);
+            
+            return q2.promise;
 		}
 	}
 	

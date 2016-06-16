@@ -35,3 +35,8 @@ module.exports.updateCategory = function(id, updatedTitle, callback) {
 	
 	Category.findOneAndUpdate(query, update, options, callback);
 }
+
+//Get Category
+module.exports.getCategoryById = function(id, callback){
+    Category.find({_id: id}).exec(callback);
+}

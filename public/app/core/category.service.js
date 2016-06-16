@@ -11,7 +11,8 @@
 			getCategories: getCategories,
 			createCategory: createCategory,
 			deleteCategory: deleteCategory,
-			updateCategory: updateCategory	
+			updateCategory: updateCategory,
+            getCategoryById: getCategoryById	
 		}
 		
 		return service;
@@ -71,6 +72,20 @@
 					console.log('XHR Failed for updateCategory');
 				}
 		}
+        
+        function getCategoryById(id){
+            return $http.get('/category/:id')
+                .success(success)
+                .catch(fail)
+                
+                function success(response){
+                    return response
+                }
+                
+                function fail(e){
+                    return console.log('XHR Failed for getCategoryById')
+                }
+        }
 	}
 	
 })();

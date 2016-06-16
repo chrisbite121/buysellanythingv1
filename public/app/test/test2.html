@@ -1,0 +1,25 @@
+<div data-ng-controller="test2Ctrl">
+    test 2 Pic gallery
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <div class="row">
+                <canvas id="mainImage" data-position="{{position}}" class="gallery" data-ng-click="createCanvas()"></canvas>
+            </div>
+            <div class="row">
+                <canvas id="image01" data-position="0" data-ng-click="setMain($event)"></canvas>
+                <canvas id="image02" data-position="1" data-ng-click="setMain($event)"></canvas>
+                <canvas id="image03" data-position="2" data-ng-click="setMain($event)"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="addImage">{{inputText}}</label>
+            <input type="file" id="addImage" name="file" custom-on-change2="uploadFile"/>
+        </div>
+        <div id='divZoom'></div>
+            <!-- <canvas data-ng-show="showCanvas" id="zoomImage"></canvas> -->            
+        
+        
+    </div>
+    
+</div>

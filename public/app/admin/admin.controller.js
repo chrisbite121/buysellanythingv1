@@ -3,26 +3,29 @@
 	angular.module('app.admin')
 		.controller('adminCtrl', adminCtrl);
 		
-	adminCtrl.$inject = ['$rootScope'];
+	adminCtrl.$inject = ['$rootScope', 'breadCrumbService'];
 		
-	function adminCtrl($rootScope){
+	function adminCtrl($rootScope, breadCrumbService){
 		var vm = this;
-		$rootScope.previousState;
-		$rootScope.currentState;
+        vm.breadCrumbArray = [];
+
 		$rootScope.$on('$stateChangeSuccess', function(ev, to, toParams, from, fromParams) {
-    	$rootScope.previousState = from.name;
-    	$rootScope.currentState = to.name;
-		});
+             $rootScope.previousState = from.name;
+             $rootScope.currentState = to.name;
+             vm.breadCrumbArray = breadCrumbService.getBreadCrumbs(); 
+		 });
 		
 		
 		activate();
 		
-		vm.subMenu = {
+		vm.subMenuType = {
 			menuType: 'admin'
 		}
 		
 		function activate(){
 			console.log('admin controller activated');
+            vm.breadCrumbArray = breadCrumbService.getBreadCrumbs();
+            console.log(vm.breadCrumbArray);
 		}
 	}
-})();
+})(); 

@@ -5,13 +5,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-
         </a>
-       
-        <div data-ng-repeat="i in vm.menuItems">
-            <a ui-sref="{{i.name}}">{{i.data.menuName}}</a>
-        </div>
+
     </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li data-ng-repeat="i in vm.menuItems"
+               data-ng-click="vm.isActive = $index" 
+               data-ng-class="{active: $index == vm.isActive}">
+                    <a ui-sref="{{i.name}}">{{i.data.menuName}}</a>
+           </li>
+          </ul>
+    
     <div class="navbar-collapse collapse">
         <div class="pull-right navbar-logo">
             <ul class="nav navbar-nav pull-right">
@@ -22,13 +28,13 @@
 
                 </li>
                 <li class="dropdown dropdown-big">
-                    <a href="http://www.angularjs.org" target="_blank">
-                        <img src="images/AngularJS-small.png" />
+                    <a ng-href="" target="_blank">
+                        <img src="/public/images/assets/icon.png" />
                     </a>
                 </li>
                 <li>
-                    <a href="http://www.gulpjs.com/" target="_blank">
-                        <img src="images/gulp-tiny.png" />
+                    <a ng-href="" target="_blank">
+                        <img src="/public/images/assets/icon.png"" />
                     </a>
                 </li>
             </ul>

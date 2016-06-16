@@ -2,11 +2,13 @@
 	'use strict';
 	
 	angular.module('app.manageItems')
-		.controller('manageItemCtrl', manageItemCtrl);
+		.controller('adminManageItemCtrl', adminManageItemCtrl);
 		
-	manageItemCtrl.$inject = ['$state', '$stateParams', 'itemService','messageService'];
+	adminManageItemCtrl.$inject = ['$state', '$stateParams', 
+      'itemService','messageService'];
 	
-	function manageItemCtrl($state, $stateParams, itemService, messageService){
+	function adminManageItemCtrl($state, $stateParams, 
+      itemService, messageService){
 		var vm = this;
 		vm.items = [];
 		vm.showUpdatedItem = false;
@@ -26,20 +28,27 @@
 			createItem();
 		}
 		
-		vm.removeItem = function(id) {
-			deleteItem(id);
+		vm.removeItem = function(id, title) {
+            var confirmation = confirm('Are you sure you want to delete ' + title + ' with ID: ' + id + '?');
+            if (confirmation) {
+			     deleteItem(id);
+            }
 		}
 		
 		vm.editItem = function(item) {
 			editItem(item);
 		}
+        
+        vm.viewItem = function(item) {
+            viewItem(item);
+        }
 		
 		function createItem() {
 			$state.go('adminCreateItem');
 		}
 		
-		function getItems(){
-			var promise = itemService.getItems();
+		function getAllItems(){
+			var promise = itemService.getAllItems();
 			promise.then(function(results){
 				vm.items = results;
 			});
@@ -59,6 +68,10 @@
 		function editItem(item){
 			$state.go('admin.EditItem', {item: item});
 		}
+        
+        function viewItem(item){
+            $state.go('admin.ViewItem', {item: item});
+        }
 		
 		activate();
 		
@@ -67,7 +80,7 @@
 				var messageData = $stateParams.messageData;
 				messageService.createMessage(messageData.duration, messageData.content, messageData.type, vm);
 			}
-			getItems();
+			getAllItems();
 		}
 	}
 	

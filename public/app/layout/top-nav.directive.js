@@ -3,9 +3,9 @@
 		.module('app.layout')
 		.directive('topNav', topNav);
 		
-		topNav.$inject = ['menuService'];
+		topNav.$inject = ['$rootScope', 'menuService'];
 		
-		function topNav(menuService) {
+		function topNav($rootScope, menuService) {
 			var directive = {
 				bindToController: true,
 				controller: TopNavController,
@@ -19,8 +19,16 @@
 			
 			function TopNavController() {
 				var vm = this;
-				var menuType = 'main';
-				vm.menuItems = menuService.getMenuItems(menuType);
+                var menuType = 'main';
+				vm.menuTiems = [];
+                vm.isActive = undefined;
+                
+                activate();
+                
+                function activate(){
+                    vm.menuItems = menuService.getMenuItems(menuType);
+                }
+                
 			}
 			
 			return directive;

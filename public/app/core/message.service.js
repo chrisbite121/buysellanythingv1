@@ -9,7 +9,7 @@
 	function messageService($timeout){
 		var service = {
 			createMessage: function(timeout, content, type, vm){
-								if(!vm.message){vm.message={}};
+								if(vm && !vm.message){vm.message={}};
 								vm.message.show = true;
 								vm.message.type = type;
 								vm.message.content = content;

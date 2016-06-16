@@ -3,9 +3,9 @@
 		.module('app.layout')
 		.directive('submenuNav', submenuNav);
 		
-		submenuNav.$inject =['menuService'];
+		submenuNav.$inject =[];
 		
-		function submenuNav(menuService) {
+		function submenuNav() {
 			var directive = {
 				bindToController: true,
 				controller: SubmenuNavController,
@@ -17,9 +17,16 @@
 				templateUrl: 'app/layout/submenu.html'
 			};
 			
-			function SubmenuNavController() {
+			function SubmenuNavController($rootScope, $scope, $state, menuService, modelService) {
 				var vm = this;
-				vm.menuItems = menuService.getMenuItems(vm.subMenu.menuType);
+                vm.isActive = undefined;
+                vm.menuItems = [];
+                
+                activate();
+                function activate(){
+                    vm.menuItems = menuService.getMenuItems(vm.subMenu.menuType);
+                }
+                
 			}
 			
 			return directive;

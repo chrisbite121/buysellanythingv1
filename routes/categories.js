@@ -56,6 +56,19 @@ router.put('/updateCategory', function(req, res, next) {
 	});
 });
 
+//Get category by Id
+router.get('/:id', function(req, res, next){
+    var id = req.params.id;
+    Category.getCategoyr(id, function(err, category){
+        if(err){
+            console.log(err);
+        } else {
+            res.json(category);
+        }
+    });
+});
+
+
 function getCategories(req, res, next) {
 		Category.getCategories(function(err, categories) {
 			if(err){

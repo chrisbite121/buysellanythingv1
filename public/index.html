@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-ng-app="myApp">
 	<head>
-		<title>Index Page</title>
+		<title>HotThaiDeals</title>
 		<base href='/'>
 	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
 	<link rel="stylesheet" href="/public/css/style.css" />
@@ -12,28 +12,79 @@
 		
 		<div ui-view></div>
 		
+        <!-- third party libraries -->
 		<script src="/bower_components/jquery/dist/jquery.js"></script>
 		<script src="/bower_components/angular/angular.js"></script>
 		<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		<script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 		<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-		
-		<script src="app/core/core.module.js"></script>
-		<script src="app/layout/layout.module.js"></script>
-		<script src="app/core/config.js"></script>
-		<script src="app/core/routes.js"></script>
+ 		
+         <!--services -->
+        <script src="app/core/core.module.js"></script>
 		<script src="app/core/item.service.js"></script>
 		<script src="app/core/category.service.js"></script>
 		<script src="app/core/menu.service.js"></script>
 		<script src="app/core/message.service.js"></script>
 		<script src="app/core/geo.service.js"></script>
+        <script src="app/core/model.service.js"></script>
+        <script src="app/core/image.service.js"></script>
+        <script src="app/core/breadcrumb.service.js"></script>
+        <script src="app/core/user.service.js"></script>
+
+        <!-- config --> 
+		<script src="app/core/app.config.js"></script>
+        
+        <!-- comments -->
+        <script src="app/core/comment/comment.service.js"></script>
+        <script src="app/core/comment/comment.directive.js"></script>
+        <script src="app/core/comment/view_comment.directive.js"></script>
+        <script src="app/core/comment/add_comment.directive.js"></script>
+        <script src="app/core/comment/respond_comment.directive.js"></script>
+
+        <!-- directives -->
+        <script src="app/core/on-change.directive.js"></script>
+        
+        <!-- layout -->
+		<script src="app/layout/layout.module.js"></script>
 		<script src="app/layout/shell.controller.js"></script>
 		<script src="app/layout/top-nav.directive.js"></script>
 		<script src="app/layout/submenu.directive.js"></script>
-		<script src="app/home/home.module.js"></script>
-		<script src="app/home/home.controller.js"></script>
+        
+        <!-- Routes -->
+        <script src="app/core/app.routes.js"></script>
+        <script src="app/admin/admin.routes.js"></script>
+        <script src="app/test/test.routes.js"></script>
+        
+        <!--Main -->
+		<script src="app/main/main.module.js"></script>
+		<script src="app/main/main.controller.js"></script>
+        <script src="app/main/home/home.module.js"></script>
+        <script src="app/main/home/home.controller.js"></script>
+		<script src="app/item/additem/additem.module.js"></script>
+		<script src="app/item/additem/additem.controller.js"></script>
+        <script src="app/item/additem/additem_image.controller.js"></script>
+        <script src="app/item/additem/additem_detail.controller.js"></script>
+		<script src="app/item/edititem/edititem.module.js"></script>
+		<script src="app/item/edititem/edititem.controller.js"></script>
+		<script src="app/item/viewitem/viewitem.module.js"></script>
+		<script src="app/item/viewitem/viewitem.controller.js"></script>
+        
+        <!-- Test Scripts DELETE ME -->
+        <script src="app/test/test.module.js"></script>
+        <script src="app/test/test.controller.js"></script>
+        <script src="app/test/test1.controller.js"></script>
+        <script src="app/test/test2.controller.js"></script>
+        <script src="app/test/test3.controller.js"></script>
+        <script src="app/test/test4.controller.js"></script>
+        <script src="app/test/test4.directives.js"></script>			        
+        
+        <!-- User modules -->
 		<script src="app/signup/signup.module.js"></script>
 		<script src="app/signup/signup.controller.js"></script>
+        <script src="app/user/user.module.js"></script>
+		<script src="app/user/user.controller.js"></script>
+        
+        <!-- admin modules -->
 		<script src="app/admin/admin.module.js"></script>
 		<script src="app/admin/admin.controller.js"></script>
 		<script src="app/admin/item/manage_item.module.js"></script>
@@ -41,17 +92,18 @@
 		<script src="app/admin/item/view_item.controller.js"></script>
 		<script src="app/admin/item/add_item.controller.js"></script>
 		<script src="app/admin/item/edit_item.controller.js"></script>
-		<script src="app/item/additem.module.js"></script>
-		<script src="app/item/additem.controller.js"></script>
-		<script src="app/item/edititem.module.js"></script>
-		<script src="app/item/edititem.controller.js"></script>
-		<script src="app/item/viewitem.module.js"></script>
-		<script src="app/item/viewitem.controller.js"></script>		
-		<script src="app/category/manage_category.module.js"></script>
-		<script src="app/category/manage_category.controller.js"></script>
-		<script src="app/user/user.module.js"></script>
-		<script src="app/user/user.controller.js"></script>
+        <script src="app/admin/user/manage_user.module.js"></script>
+        <script src="app/admin/user/manage_user.controller.js"></script>
+        <script src="app/admin/user/user_detail.controller.js"></script>
+		<script src="app/admin/category/manage_category.module.js"></script>
+		<script src="app/admin/category/manage_category.controller.js"></script>
+        <script src="app/admin/comment/manage_comment.module.js"></script>
+        <script src="app/admin/comment/manage_comment.controller.js"></script>
+        <script src="app/admin/comment/comment_detail.controller.js"></script>
+
 		<script src="app/app.module.js"></script>
+        
+        
 	</body>
 	
 	

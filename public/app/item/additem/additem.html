@@ -1,0 +1,57 @@
+<div class="container" data-ng-controller="addItemCtrl">
+   <h3>Post Item</h3>
+   <div class="row">
+   <div class="col-md-1"></div>
+   <div class="col-md-4" >
+       <div class="row">
+           <div class="col-md-12">
+           <a class="thumbnail handOnHover" target="_self">
+               <img ng-src="{{urlObject.main}}" id="main" data-ng-click="zoom($event);" />
+           </a>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col-md-4">
+            <a class="thumbnail handOnHover" target="_self">   
+                <img src="{{urlObject.gallery01}}" id="gallery01" data-ng-click="selectPic($event);"/>
+            </a>
+           </div>
+           <div class="col-md-4">
+            <a class="thumbnail handOnHover" target="_self">
+                <img src="{{urlObject.gallery02}}" id="gallery02" data-ng-click="selectPic($event);"/>
+            </a>
+           </div>
+           <div class="col-md-4">
+            <a class="thumbnail handOnHover" target="_self">
+              <img src="{{urlObject.gallery03}}" id="gallery03" data-ng-click="selectPic($event);" />
+            </a>
+           </div>
+       </div>
+   </div>
+   <div class="col-md-1"></div>
+   <div class="col-md-6">
+    <form data-ng-submit="addItem();" enctype="multipart/form-data">
+        <uib-tabset>
+            <uib-tab heading="details">
+                <div data-ng-include="'app/item/additem/additem_detail.html'"></div>
+            </uib-tab>
+            <uib-tab heading="images">
+                <div data-ng-include="'app/item/additem/additem_image.html'"></div>
+            </uib-tab>
+        </uib-tabset>
+     </form>
+    </div>
+    </div>
+    
+    <comments></comments>
+    
+    
+    <input type="file" id="file01" class="hidden" on-change="addPic"/>
+    <input type="file" id="file02" class="hidden" on-change="addPic"/>
+    <input type="file" id="file03" class="hidden" on-change="addPic"/>
+    <canvas id="{{imageObject.gallery01.canvasName}}" class="hidden"></canvas>
+    <canvas id="{{imageObject.gallery02.canvasName}}" class="hidden"></canvas>
+    <canvas id="{{imageObject.gallery03.canvasName}}" class="hidden"></canvas>
+    
+   
+</div>

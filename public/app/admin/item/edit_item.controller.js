@@ -4,15 +4,20 @@
 	angular.module('app.manageItems')
 		.controller('adminEditItemCtrl', adminEditItemCtrl);
 		
-	adminEditItemCtrl.$inject = ['$rootScope','$state','$stateParams', 'categoryService', 'geoService', 'itemService', 'messageService'];
+	adminEditItemCtrl.$inject = 
+    ['$scope' ,'$rootScope','$state','$stateParams', 'categoryService', 
+    'geoService', 'itemService', 'messageService','imageService'];
 	
-	function adminEditItemCtrl($rootScope, $state, $stateParams, categoryService, geoService, itemService, messageService){
-		var vm = this;
-		
+	function adminEditItemCtrl($scope, $rootScope, $state, $stateParams, 
+        categoryService, geoService, itemService, messageService, imageService){
+            
+        var vm = this;
+        var itemData;
+        vm.showImages = false;
+        vm.imageArray = [];
 		vm.updateItem = function(){
 			updateItem();
 		}
-		
 		vm.cancelEdit = function(){
 			cancelEdit();
 		}
@@ -33,19 +38,29 @@
 		
 		function cancelEdit(){
 			$state.go($rootScope.previousState);
-			console.log('cancel called');
 		}
 		
 		activate();
 		
 		function activate(){
-			
-			vm.locations = geoService.getProvinces();
-			var promise = categoryService.getCategories();
-			promise.then(function(response){
-				vm.categories = response;
-				vm.item = $stateParams.item;
-			});			
-		}
-	}	
+            //add check here or against route - if not item selected return to previous state;
+            if(Object.keys($stateParams.item).length === 0) {
+                  messageService.createMessage(4000, "no item selected", "danger", vm)
+            }
+
+            geoService.getProvinces()
+			.then(function(response){
+                 vm.locations = response; 
+            })
+            .then(categoryService.getCategories)
+            .then(function(response){
+                    vm.categories = response;
+                    vm.item = $stateParams.item;
+                    vm.imageArray = imageService.processImageData(vm.item)
+                    if(vm.imageArray.length > 0) {
+                        vm.showImages = true;
+                    }
+            });
+         }
+        }
 })();

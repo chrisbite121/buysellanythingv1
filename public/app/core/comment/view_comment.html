@@ -1,0 +1,7 @@
+<p>Comments</p>
+<div class="row" data-ng-repeat="comment in vm.comments | orderBy : 'full_slug'">
+    <h4>{{comment.author_name}}</h4>
+    <h4>{{posted}}</h4>
+    <p>{{comment.text}}</p>
+    <respond-comment data-parent-slug="comment.full_slug"></respond-comment>
+</div>

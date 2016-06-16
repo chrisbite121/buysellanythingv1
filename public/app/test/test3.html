@@ -1,0 +1,21 @@
+<div data-ng-controller="test3Ctrl">
+    test 3 Tabs
+  <form name="outerForm" class="tab-form-demo">
+    <uib-tabset>
+      <uib-tab heading="Form Tab">
+        <ng-form name="nestedForm">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" required ng-model="model.name"/>
+          </div>
+        </ng-form>
+      </uib-tab>
+      <uib-tab heading="Tab One">
+        Some Tab Content
+      </uib-tab>
+      <uib-tab heading="Tab Two">
+        More Tab Content
+      </uib-tab>
+    </uib-tabset>
+  </form>    
+</div>

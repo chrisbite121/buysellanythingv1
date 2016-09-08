@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+	<head>
+		<title>HotThaiDeals</title>
+		<base href='/'>
+	
+	<!-- build:css styles/lib.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:css styles/app.css -->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/.tmp/styles.css">
+	<!-- endinject -->
+	<!-- endbuild -->
+
+	</head>
+	<body>
+		
+		<div data-ng-include="'app/layout/shell.html'"></div>
+		
+		<div ui-view></div>
+		
+		<!-- build:js js/lib.js -->
+		<!-- bower:js -->
+		<script src="/bower_components/angular/angular.js"></script>
+		<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+		<script src="/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+
+		<!-- build:js js/app.js --> 
+		<!-- inject:js -->
+		<script src="/src/client/app/app.module.js"></script>
+		<script src="/src/client/app/admin/admin.module.js"></script>
+		<script src="/src/client/app/core/core.module.js"></script>
+		<script src="/src/client/app/layout/layout.module.js"></script>
+		<script src="/src/client/app/main/main.module.js"></script>
+		<script src="/src/client/app/signup/signup.module.js"></script>
+		<script src="/src/client/app/test/test.module.js"></script>
+		<script src="/src/client/app/user/user.module.js"></script>
+		<script src="/src/client/app/admin/category/manage_category.module.js"></script>
+		<script src="/src/client/app/admin/item/manage_item.module.js"></script>
+		<script src="/src/client/app/admin/comment/manage_comment.module.js"></script>
+		<script src="/src/client/app/admin/user/manage_user.module.js"></script>
+		<script src="/src/client/app/item/additem/additem.module.js"></script>
+		<script src="/src/client/app/item/edititem/edititem.module.js"></script>
+		<script src="/src/client/app/item/viewitem/viewitem.module.js"></script>
+		<script src="/src/client/app/main/home/home.module.js"></script>
+		<script src="/src/client/app/admin/admin.controller.js"></script>
+		<script src="/src/client/app/admin/admin.routes.js"></script>
+		<script src="/src/client/app/core/app.config.js"></script>
+		<script src="/src/client/app/core/app.routes.js"></script>
+		<script src="/src/client/app/core/breadcrumb.service.js"></script>
+		<script src="/src/client/app/core/category.service.js"></script>
+		<script src="/src/client/app/core/geo.service.js"></script>
+		<script src="/src/client/app/core/image.service.js"></script>
+		<script src="/src/client/app/core/item.service.js"></script>
+		<script src="/src/client/app/core/menu.service.js"></script>
+		<script src="/src/client/app/core/message.service.js"></script>
+		<script src="/src/client/app/core/model.service.js"></script>
+		<script src="/src/client/app/core/on-change.directive.js"></script>
+		<script src="/src/client/app/core/user.service.js"></script>
+		<script src="/src/client/app/layout/shell.controller.js"></script>
+		<script src="/src/client/app/layout/submenu.directive.js"></script>
+		<script src="/src/client/app/layout/top-nav.directive.js"></script>
+		<script src="/src/client/app/main/main.controller.js"></script>
+		<script src="/src/client/app/signup/signup.controller.js"></script>
+		<script src="/src/client/app/test/test.controller.js"></script>
+		<script src="/src/client/app/test/test.routes.js"></script>
+		<script src="/src/client/app/test/test1.controller.js"></script>
+		<script src="/src/client/app/test/test2.controller.js"></script>
+		<script src="/src/client/app/test/test3.controller.js"></script>
+		<script src="/src/client/app/test/test4.controller.js"></script>
+		<script src="/src/client/app/test/test4.directives.js"></script>
+		<script src="/src/client/app/user/user.controller.js"></script>
+		<script src="/src/client/app/admin/category/manage_category.controller.js"></script>
+		<script src="/src/client/app/admin/item/add_item.controller.js"></script>
+		<script src="/src/client/app/admin/item/edit_item.controller.js"></script>
+		<script src="/src/client/app/admin/item/manage_item.controller.js"></script>
+		<script src="/src/client/app/admin/item/view_item.controller.js"></script>
+		<script src="/src/client/app/admin/comment/comment_detail.controller.js"></script>
+		<script src="/src/client/app/admin/comment/manage_comment.controller.js"></script>
+		<script src="/src/client/app/admin/user/manage_user.controller.js"></script>
+		<script src="/src/client/app/admin/user/user_detail.controller.js"></script>
+		<script src="/src/client/app/item/additem/additem.controller.js"></script>
+		<script src="/src/client/app/item/additem/additem_detail.controller.js"></script>
+		<script src="/src/client/app/item/additem/additem_image.controller.js"></script>
+		<script src="/src/client/app/item/edititem/edititem.controller.js"></script>
+		<script src="/src/client/app/item/viewitem/viewitem.controller.js"></script>
+		<script src="/src/client/app/core/comment/add_comment.directive.js"></script>
+		<script src="/src/client/app/core/comment/comment.directive.js"></script>
+		<script src="/src/client/app/core/comment/comment.service.js"></script>
+		<script src="/src/client/app/core/comment/respond_comment.directive.js"></script>
+		<script src="/src/client/app/core/comment/view_comment.directive.js"></script>
+		<script src="/src/client/app/main/home/home.controller.js"></script>
+		<!-- endinject -->
+		
+		<!-- inject:templates:js -->
+		<!-- endinject -->
+		
+		<!-- endbuild -->
+	</body>
+	
+	
+</html>

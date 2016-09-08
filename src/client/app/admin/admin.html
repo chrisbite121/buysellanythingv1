@@ -1,0 +1,9 @@
+<div data-ng-controller="adminCtrl as vm">
+	<submenu-nav sub-menu="vm.subMenuType"></submenu-nav>
+        <ol class="breadcrumb">
+            <li data-ng-repeat="b in vm.breadCrumbArray">
+                <a ui-sref="{{b.stateName}}">{{b.menuName}}</a>
+            </li>
+        </ol>
+	<ui-view></ui-view>
+</div>

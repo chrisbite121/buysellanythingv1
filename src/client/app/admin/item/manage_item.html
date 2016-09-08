@@ -1,0 +1,62 @@
+<div class="container" data-ng-controller="adminManageItemCtrl as vm">
+        <div data-ng-show="vm.message.show">
+          <uib-alert type="{{vm.message.type}}">{{vm.message.content}}</uib-alert>
+        </div>
+        <h3>Manage Items</h3>
+             
+        <div data-ng-show="vm.showUpdateItem">
+                <h4>Update Item</h4>
+                <div class="input-group">
+                <input data-ng-model="vm.updatedItemName" type="text" class="form-control" placeholder="Item Name...">
+                <span class="input-group-btn">
+                        <button data-ng-click="vm.updateItem(vm.updatedItemId, vm.updatedItemName);" class="btn btn-default" type="button">Save</button>
+                </span>
+                </div>
+        </div>
+
+        <div>
+                <h4>Filter</h4>
+                <input data-ng-model="searchText" type="text" class="form-control" placeholder="Search...">    
+        </div>
+       
+        <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <td class="col-md-1" data-ng-click="vm.doSort('_id');">Item Id</td>
+                      <td class="col-md-1" data-ng-click="vm.doSort('title');">Name</td>
+                      <td class="col-md-1" data-ng-click="vm.doSort('category');">Category</td>
+                      <td class="col-md-1" data-ng-click="vm.doSort('price');">Price</td>
+                      <td class="col-md-1" data-ng-click="vm.doSort('geolocation');">Location</td>
+                      <td class="col-md-3" data-ng-click="vm.doSort('created');">Created / Created By</td>
+                      <td class="col-md-3" data-ng-click="vm.doSort('updated');">Updated / Updated By</td>
+                      <td class="col-md-1">&nbsp;</td>
+                     </tr>
+                </thead>
+                <tbody>
+                     <tr data-ng-repeat="item in vm.items | filter:searchText | orderBy:vm.sortBy:vm.reverse">
+                       <td>{{item._id}}</td>
+                       <td>{{item.title}}</td>
+                       <td>{{item.category}}</td>
+                       <td>{{item.price}}</td>
+                       <td>{{item.geolocation}}</td>
+                       <td>{{item.created | date:"medium"}}</td>
+                       <td>{{item.updated | date:"medium"}}</td>
+                       <td>
+                         <button data-ng-click="vm.viewItem(item);" class="btn btn-success pull-right">
+                         <span class="glyphicon glyphicon-eye-open"></span>
+                         </button>
+                       </td>
+                       <td>
+                         <button data-ng-click="vm.editItem(item);" class="btn btn-warning pull-right">
+                         <span class="glyphicon glyphicon-pencil"></span>
+                         </button>
+                       </td>
+                       <td>
+                         <button data-ng-click="vm.removeItem(item._id, item.title);" class="btn btn-danger pull-right">
+                         <span class="glyphicon glyphicon-remove"></span>
+                         </button>
+                       </td>
+                     </tr>
+                </tbody>
+        </table>
+</div>

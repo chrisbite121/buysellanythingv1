@@ -16,8 +16,8 @@
             picInputText: ['Select a Main Image', 'Select a Second Image', 'Select a Third Image', 'Select a Fourth Image', ''],
             maxHeight: 150,
             maxWidth:  150,
-            mainImageSrc: 'public/images/assets/mainimage.jpg',
-            galleryImageSrc: 'public/images/assets/add.jpg',
+            mainImageSrc: 'images/assets/mainimage.jpg',
+            galleryImageSrc: 'images/assets/add.jpg',
             canvas01: 'galleryCanvas01',
             canvas02: 'galleryCanvas02',
             canvas03: 'galleryCanvas03'  

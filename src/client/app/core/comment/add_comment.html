@@ -1,0 +1,7 @@
+<div data-ng-show="vm.message.show">
+    <uib-alert type="{{vm.message.type}}">{{vm.message.content}}</uib-alert>
+</div>
+
+<label for="addComment">Add Comment</label>
+<textarea id="addComment" type="text" data-ng-model="vm.commentText"></textarea>
+<button data-ng-click="vm.postComment();">submit</button>

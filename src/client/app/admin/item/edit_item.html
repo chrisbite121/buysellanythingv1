@@ -1,0 +1,43 @@
+<div class="container" data-ng-controller="adminEditItemCtrl as vm">
+
+<div data-ng-show="vm.message.show">
+  <uib-alert type="{{vm.message.type}}">{{vm.message.content}}</uib-alert>
+</div>
+
+<h3>Edit Item</h3>
+<form data-ng-submit="vm.updateItem();">
+  <h4>Created On</h4>
+  <p>{{vm.item.created | date:'medium'}}</p>
+  <div class="form-group">
+    <label>Item Title</label>
+    <input type="text" class="form-control" data-ng-model="vm.item.title" name ="title" placeholder="Enter Title">
+  </div>
+  <div class="form-group">
+    <label>Category</label>
+    <select class="form-control" data-ng-model="vm.item.category" name ="category" >
+		<option data-ng-repeat="category in vm.categories" value="{{category.title}}">{{category.title}}</option>
+	</select>
+  </div>  
+  <div class="form-group">
+    <label>Description</label>
+    <textarea type="text" class="form-control" data-ng-model="vm.item.description" name ="description" placeholder="Enter Item Description">
+	</textarea>
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input type="number" class="form-control" data-ng-model="vm.item.price" name ="Price" placeholder="Enter Amount">
+  </div>
+  <div class="form-group">
+    <label>Location</label>
+    <select class="form-control" data-ng-model="vm.item.geolocation" name ="location" >
+		<option data-ng-repeat="location in vm.locations" value="{{location.Province}}">{{location.Province}}</option>
+	</select>
+    <button type="submit" class="btn btn-default">Submit</button>
+    <button type='button' class="btn btn-danger" data-ng-click="vm.cancelEdit();">Cancel</a>
+   </div>
+</form>
+<h4>Images</h4>
+<div data-ng-show="vm.showImages" data-ng-repeat="image in vm.imageArray track by $index">
+    <img ng-src="{{vm.imageArray[$index]}}" />
+</div>
+

@@ -1,0 +1,23 @@
+<div data-ng-controller="editItemCtrl as vm">
+<h3>Edit Item</h3>
+<form ng-submit="updateItem();">
+  <div class="form-group">
+    <label>Item Name</label>
+    <input type="text" class="form-control" ng-model="item.name" name ="name" placeholder="Enter Name">
+  </div>
+  <div class="form-group">
+    <label>Category</label>
+    <select class="form-control" ng-model="item.category" name ="category" >
+		<option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+	</select>
+  </div>  
+  <div class="form-group">
+    <label>Item Description</label>
+    <textarea type="text" class="form-control" ng-model="item.description" name ="description" placeholder="Enter Item Description">
+	</textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-default">Submit</button>
+  <a class="btn btn-danger" href='/'>Cancel</a>
+</form>
+</div>

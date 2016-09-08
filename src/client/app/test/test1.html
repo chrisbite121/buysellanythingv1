@@ -1,0 +1,48 @@
+<div data-ng-controller="test1Ctrl">
+    test1 page
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <div class="row" >   
+                    <canvas id="canvas01" class="gallery"></canvas>
+            </div>
+            <div class="row" class="gallery"> 
+                    <canvas id="canvas02" data-position="1" class="gallery" 
+                        ng-click="setMain($event)"></canvas>
+                    <canvas id="canvas03" data-position="2" class="gallery" 
+                        ng-click="setMain($event)"></canvas>
+                    <canvas id="canvas04" data-position="3" class="gallery" 
+                        ng-click="setMain($event)"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <span ng-if="inputTag.show">
+                <label for="file">{{inputText}}</label>
+                <input type="file" id="file" name="file"/>
+                <button ng-click="add()">Add</button>
+            </span>
+            <div>
+                <label for="order">Select picture order</label>    
+                <select id="order">
+                    <option data-ng-repeat="i in picOrder" 
+                            value="i">{{i}}</option>
+                </select>
+            </div>
+            <label for="uploadImage">Upload Image</label>
+            <input type="file" id="uploadImage" custom-on-change="uploadFile">
+            
+            <div>
+                <label for="imageReview">Image Review</label>
+                <img id="imageReview" ng-src="{{imageReview}}" />
+            </div>
+            <canvas id="canvas05"></canvas>
+            
+            <button id="downloadImage" data-ng-click="downloadImages()">Download Image</button>
+            </div>
+            
+            <div>
+                <canvas id="canvas06"></canvas>
+                <button id="secondImage" data-ng-click="getCachedImage()">get Cacehd Image</button>
+            </div>
+    </div>
+</div>
